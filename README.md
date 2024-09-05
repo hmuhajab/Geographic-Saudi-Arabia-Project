@@ -1,4 +1,4 @@
-# Saudi Arabia Linked Data Project: Geographic Data Processing and S2Grid Utilization
+# Geographic Saudi Arabia Project: GADM and S2Grid
 
 ## Overview
 
