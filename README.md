@@ -43,6 +43,9 @@ This project focuses on building comprehensive linked data for Saudi Arabia by i
      - **Level 10**: Cells cover about 200 square kilometers.
      - **Level 13**: Cells cover about 25 square kilometers, providing a fine-grained resolution ideal for capturing significant features within populated places in Saudi Arabia.
      - **Application**: The Level 13 resolution is chosen to fit the requirement of representing the populated place.
+     - **Output File**: All the previously extracted attributes, along with the newly calculated s2_cell_id and s2_cell_token, are saved into `found_SaudiArabia_OSM_with_neighbours_updated.json`.
+
+
 
 4. **Calculating Proximity and Visualizing Data**:
    - **Nearest Neighbor Calculation**: The script calculates the nearest neighbors within the S2Grid, which aids in understanding spatial relationships between features.
