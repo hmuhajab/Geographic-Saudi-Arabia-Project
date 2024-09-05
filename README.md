@@ -8,10 +8,29 @@ This project focuses on building comprehensive linked data for Saudi Arabia by i
 
 ## Project Structure
 
+
+
 ### Part A: Integrating GADM Data
 
-- **GADM Data**: GADM provides detailed boundaries of administrative areas globally. In this project, GADM data is used to establish a hierarchical structure of regions within Saudi Arabia, which serves as a foundational layer for the linked data model.
-- **Parent Identification**: The GADM data is used to identify the last-level (most specific) parent region for each entry in the dataset, ensuring that each geographic feature is correctly situated within the Saudi Arabian administrative structure.
+- **GADM Data**: GADM provides detailed boundaries of administrative areas globally. In this project, GADM data is used to define the hierarchical structure of regions within Saudi Arabia, serving as a foundational layer for the linked data model.
+
+1.  **Processing the GADM Data**:
+   - **Reading Attributes**: The GADM data is loaded and processed to read the relevant attributes, including the geographic boundaries (polygons) that define each administrative region within Saudi Arabia.
+   - **Extracting Latitude and Longitude**: For each polygon representing a geographic region, the script calculates the centroid to determine the latitude and longitude. This centroid serves as a representative point for the entire polygon, simplifying spatial analysis.
+   - **Data Extraction**: The script extracts the following key attributes from the GADM data:
+     - `"GID"`: The unique identifier for the geographic entity, e.g., `"SAU"`.
+     - `"name"`: The name of the region.
+     - `"type"`: The type of the geographic entity (e.g., state, province, district).
+     - `"lat"`: The latitude of the centroid of the polygon.
+     - `"long"`: The longitude of the centroid of the polygon.
+     - `"within"`: The identifier of the parent region within the hierarchical structure.
+     - `"neighbours"`: A list of neighboring regions.
+     - `"geometry"`: The geometry of the polygon, which is the actual boundary data.
+   - **Output Structure**: This extracted and structured data is saved in a JSON format, facilitating further analysis and integration with the linked data model.
+
+2. **Finding and Calculating the Nearest Neighbors**:
+   For each geographic region, the script identifies the nearest neighboring regions based on spatial proximity. The JSON file is updated with the nearest neighbors for each region.
+
 
 ### Part B: Processing OSM Data for Saudi Arabia
 
