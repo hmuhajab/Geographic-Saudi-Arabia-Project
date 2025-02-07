@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project focuses on building comprehensive linked data for Saudi Arabia by integrating and structuring geographic data from multiple sources. The project leverages OpenStreetMap (OSM) data for populated places, utilizes the S2Grid system for efficient querying and spatial analysis, and incorporates the Global Administrative Areas (GADM) database to define the administrative hierarchy of the country. The S2Grid system also helps in observing and tracking changes over time within specific regions. The project is divided into two main parts:
+This project focuses on building comprehensive linked data for Saudi Arabia by integrating and structuring geographic data from multiple sources. The project leverages geo data for populated places, utilizes the Global Administrative Areas (GADM) database to define the administrative hierarchy of the country. . The project is divided into two main parts:
 - **Part A**: Integration of data from the Global Administrative Areas (GADM) database.
-- **Part B**: Processing and refining OSM data for Saudi Arabia.
+- **Part B**: Processing and refining geo data for Saudi Arabia.
 
 ## Project Structure
 
@@ -32,12 +32,11 @@ This project focuses on building comprehensive linked data for Saudi Arabia by i
    For each geographic region, the script identifies the nearest neighboring regions based on spatial proximity. The JSON file is updated with the nearest neighbors for each region.
 
 
-### Part B: Processing OSM Data for Saudi Arabia
+### Part B: Processing geo Data for Saudi Arabia
 
 1. **Downloading and Structuring OSM Data**:
-   - **Source**: The OSM data for Saudi Arabia is sourced from **WorldKG**, where it is provided in a structured Turtle (TTL) format `gcc-states-latest.osm.ttl`.
+   - **Source**: The geo data for Saudi Arabia.
    - **Data Extraction**: The TTL file is processed to extract the following relevant fields:
-     - `"OSM_ID"`: Unique identifier for the OSM entity.
      - `"name"`: Name of the place or feature in English.
      - `"nameAr"`: Name of the place or feature in Arabic.
      - `"type"`: Type of the geographic feature (e.g., city, building, park).
@@ -56,14 +55,6 @@ This project focuses on building comprehensive linked data for Saudi Arabia by i
    - **Statistics**:
      - Number of entities with a `"within"` field: **44,136**
      - Number of entities without a `"within"` field: **80,938**
-3. **Calculating the S2Grid**:
-   - **S2 Geometry System**: The S2 system converts latitude and longitude coordinates into a hierarchical grid of cells on the Earth's surface.
-   - **Level 13 Resolution**:
-     - **Level 10**: Cells cover about 200 square kilometers.
-     - **Level 13**: Cells cover about 25 square kilometers, providing a fine-grained resolution ideal for capturing significant features within populated places in Saudi Arabia.
-     - **Application**: The Level 13 resolution is chosen to fit the requirement of representing the populated place.
-     - **Output File**: All the previously extracted attributes, along with the newly calculated s2_cell_id and s2_cell_token, are saved into `found_SaudiArabia_OSM_with_neighbours_updated.json`.
-
 
 
 4. **Calculating Proximity and Visualizing Data**:
@@ -75,7 +66,6 @@ This project focuses on building comprehensive linked data for Saudi Arabia by i
 ### Prerequisites
 
 - **Python 3.x**
-- **s2sphere**: Install using `pip install s2sphere`.
 - **Additional Libraries**: Install any other necessary libraries listed in `requirements.txt`.
 
 ### Steps to Run
