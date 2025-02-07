@@ -1,4 +1,4 @@
-# Geographic Saudi Arabia Project: GADM and S2Grid
+# Geographic Saudi Arabia Project: GADM
 
 ## Overview
 
