@@ -66,7 +66,7 @@ This project focuses on building comprehensive linked data for Saudi Arabia by i
 ### Prerequisites
 
 - **Python 3.x**
-- **Additional Libraries**: Install any other necessary libraries listed in `requirements.txt`.
+
 
 ### Steps to Run
 
